@@ -26,7 +26,6 @@ class RomaPrev extends Component {
           weather: data,
           isLoading: false
         });
-        console.log(this.state.weather);
       } else {
         this.setState({
           isLoading: false,

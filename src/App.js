@@ -6,6 +6,7 @@ import RomaPrev from "./components/RomaPrev";
 import MilanoPrev from "./components/MilanoPrev";
 import NapoliPrev from "./components/NapoliPrev";
 import PasianoPrev from "./components/PasianoPrevs";
+import NotFound from "./components/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/roma-previsioni" element={<RomaPrev />} />
         <Route path="/milano-previsioni" element={<MilanoPrev />} />
         <Route path="/napoli-previsioni" element={<NapoliPrev />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterMeteo />
     </BrowserRouter>
