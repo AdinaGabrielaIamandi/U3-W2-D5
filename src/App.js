@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavbarMeteo from "./components/NavbarMeteo";
+import FooterMeteo from "./components/FooterMeteo";
+import RomaPrev from "./components/RomaPrev";
+import MilanoPrev from "./components/MilanoPrev";
+import NapoliPrev from "./components/NapoliPrev";
+import PasianoPrev from "./components/PasianoPrevs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavbarMeteo />
+      <Routes>
+        <Route path="/" element={<PasianoPrev />} />
+        <Route path="/roma-previsioni" element={<RomaPrev />} />
+        <Route path="/milano-previsioni" element={<MilanoPrev />} />
+        <Route path="/napoli-previsioni" element={<NapoliPrev />} />
+      </Routes>
+      <FooterMeteo />
+    </BrowserRouter>
   );
 }
 
